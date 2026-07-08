@@ -9,3 +9,13 @@ module "vpc" {
 
   common_tags = local.common_tags
 }
+
+module "security_group" {
+  source = "../../modules/security-group"
+
+  name_prefix      = local.name_prefix
+  vpc_id           = module.vpc.vpc_id
+  allowed_ssh_cidr = var.allowed_ssh_cidr
+
+  common_tags = local.common_tags
+}

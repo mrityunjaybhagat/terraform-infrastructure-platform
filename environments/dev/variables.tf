@@ -15,4 +15,7 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
-
+variable "allowed_ssh_cidr" {
+  description = "Public IP allowed to SSH into Bastion"
+  type        = string
+}
