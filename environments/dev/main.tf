@@ -30,6 +30,5 @@ module "ec2" {
   private_subnet_id = module.vpc.private_subnet_id
   bastion_sg_id     = module.security_group.bastion_sg_id
   private_ec2_sg_id = module.security_group.private_ec2_sg_id
-
-  common_tags = local.common_tags
+  common_tags       = local.common_tags
 }
