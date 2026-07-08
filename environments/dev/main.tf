@@ -19,3 +19,17 @@ module "security_group" {
 
   common_tags = local.common_tags
 }
+
+module "ec2" {
+  source = "../../modules/ec2"
+
+  name_prefix       = local.name_prefix
+  instance_type     = var.instance_type
+  key_name          = var.key_name
+  public_subnet_id  = module.vpc.public_subnet_id
+  private_subnet_id = module.vpc.private_subnet_id
+  bastion_sg_id     = module.security_group.bastion_sg_id
+  private_ec2_sg_id = module.security_group.private_ec2_sg_id
+
+  common_tags = local.common_tags
+}

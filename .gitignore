@@ -5,3 +5,5 @@
 *.tfvars
 crash.log
 crash.*.log
+*.pem
+*.key
